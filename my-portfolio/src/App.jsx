@@ -3,41 +3,33 @@ import { gsap } from "gsap";
 
 const SplashScreen = ({ onComplete }) => {
   useEffect(() => {
-    gsap.to(".welcome-text", {
-      x: "500%", // Move from left to right
-      duration: 10, // Duration for full movement
-      repeat: 1, // Infinite loop
-      ease: "linear",
-      modifiers: {
-        x: gsap.utils.unitize(x => parseFloat(x) % window.innerWidth) // Keep it looping
-      }
-    });
-
-    gsap.to(".loading-icon", {
-      rotation: 360,
+    gsap.to(".loading-logo", {
+      scale: 1.2,
+      opacity: 0.8,
       repeat: -1,
-      duration: 1,
-      ease: "linear"
+      yoyo: true,
+      duration: 0.8,
+      ease: "power1.inOut"
     });
 
-    setTimeout(onComplete, 5000); // Show splash screen for 4 seconds
+    setTimeout(onComplete, 5000); // Show splash screen for 5 seconds
   }, [onComplete]);
 
   return (
     <div className="fixed inset-0 bg-gray-900 flex flex-col justify-center items-center text-white">
-      <h1 className="text-5xl font-bold mb-6">Oshadha K (奥沙达)</h1>
+      {/* Batman Logo Image with Reduced Space Below */}
+      <img src="/batmanlogo2.png" alt="Batman Logo" className="loading-logo w-52 h-52 mb-2 object-contain" />
+      
+      <h1 className="text-5xl font-bold">Oshadha K (奥沙达)</h1>
 
-      {/* Moving Welcome Text */}
-      <div className="overflow-hidden w-full flex justify-left ">
-        <div className="welcome-text text-xl font-semibold whitespace-nowrap">
-          Welcome | ආයුබෝවන් | வரவேற்பு | ようこそ | 欢迎  &nbsp;&nbsp;&nbsp;
-        </div>
-      </div>
-
-      {/* Loading Icon */}
-      <div className="absolute bottom-6 right-6 flex items-center gap-2">
+      {/* New Loading Animation */}
+      <div className="flex flex-col items-center gap-2 mt-2">
         <p className="text-xl">Loading...</p>
-        <div className="loading-icon w-10 h-10 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+        <div className="flex gap-2">
+          <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce"></div>
+          <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce delay-150"></div>
+          <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce delay-300"></div>
+        </div>
       </div>
     </div>
   );
