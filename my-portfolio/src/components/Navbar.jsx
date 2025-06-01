@@ -38,15 +38,15 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-gray-900 shadow-lg' : 'bg-transparent'}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
         {/* Logo */}
-        <div className="text-xl md:text-2xl font-bold text-yellow-400">
-          Oshadha K <span className="text-emerald-400">奥沙达</span>
+        <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">
+          Oshadha K <span className="text-white">奥沙达</span>
         </div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-6 sm:space-x-8">
           {[
             { name: "Home", id: "home" },
             { name: "About", id: "about" },
@@ -58,7 +58,7 @@ const Navbar = () => {
             <button
               key={item.id}
               onClick={() => handleLinkClick(item.id)}
-              className="text-white hover:text-yellow-400 transition-colors duration-300"
+              className="text-white hover:opacity-70 transition-colors duration-300"
             >
               {item.name}
             </button>
@@ -67,7 +67,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-white text-2xl focus:outline-none">
+          <button onClick={toggleMenu} className="text-white text-2xl focus:outline-none p-2">
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
@@ -75,8 +75,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-gray-800 p-4 absolute w-full animate-fade-in-down">
-          <div className="flex flex-col space-y-4">
+        <div className="md:hidden bg-gray-900 p-4 absolute w-full animate-fade-in-down top-full left-0">
+          <div className="flex flex-col space-y-2 sm:space-y-4">
             {[
               { name: "Home", id: "home" },
               { name: "About", id: "about" },
@@ -88,7 +88,7 @@ const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => handleLinkClick(item.id)}
-                className="text-white hover:text-yellow-400 py-2"
+                className="text-white hover:opacity-70 py-2"
               >
                 {item.name}
               </button>

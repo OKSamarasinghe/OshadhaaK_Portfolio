@@ -27,19 +27,19 @@ const SplashScreen = ({ onComplete }) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 bg-gray-900 flex flex-col justify-center items-center text-white z-50">
+    <div className="fixed inset-0 bg-gray-900 flex flex-col justify-center items-center text-white z-50 px-4">
       {/* Batman Logo Image */}
-      <img src="/batmanlogo2.png" alt="Batman Logo" className="loading-logo w-52 h-52 mb-2 object-contain" />
+      <img src="/batmanlogo2.png" alt="Batman Logo" className="loading-logo w-32 h-32 sm:w-52 sm:h-52 mb-2 object-contain" />
       
-      <h1 className="text-5xl font-bold">Oshadha K <span className="text-emerald-400">(奥沙达)</span></h1>
+      <h1 className="text-3xl sm:text-5xl font-bold text-white">Oshadha K <span className="text-white">(奥沙达)</span></h1>
 
       {/* Loading Animation */}
       <div className="flex flex-col items-center gap-2 mt-2">
-        <p className="text-xl">Loading...</p>
+        <p className="text-lg sm:text-xl text-white">Loading...</p>
         <div className="flex gap-2">
-          <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce"></div>
-          <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce delay-150"></div>
-          <div className="w-4 h-4 bg-yellow-400 rounded-full animate-bounce delay-300"></div>
+          <div className="w-3 h-3 sm:w-4 sm:h-4 bg-white rounded-full animate-bounce"></div>
+          <div className="w-3 h-3 sm:w-4 sm:h-4 bg-white rounded-full animate-bounce delay-150"></div>
+          <div className="w-3 h-3 sm:w-4 sm:h-4 bg-white rounded-full animate-bounce delay-300"></div>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@ const App = () => {
       {showSplash ? (
         <SplashScreen onComplete={() => setShowSplash(false)} />
       ) : (
-        <div className="bg-gray-900 text-white min-h-screen">
+        <div className="bg-gray-900 text-white min-h-screen w-full overflow-x-hidden">
           <Navbar />
           
           {/* Main Content */}
