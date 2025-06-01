@@ -82,7 +82,7 @@ const Contact = () => {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-900 border border-white flex items-center justify-center mr-4">
                   <FaPhone className="text-white text-lg sm:text-xl" />
                 </div>
-                <span className="text-white text-sm sm:text-base">+94 76 123 4567</span>
+                <span className="text-white text-sm sm:text-base">+94 76 639 2356</span>
               </div>
             </div>
             
